@@ -78,7 +78,11 @@
 			}
 
 			public function send ( ) {
-				return $this -> mailer -> send ( $this -> msg );
+				if ( JH_ENVIRONMENT === 'LIVE' ) {
+					return $this -> mailer -> send ( $this -> msg );
+				}
+
+				return null;
 			}
 
 		}

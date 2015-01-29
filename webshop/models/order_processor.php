@@ -22,7 +22,6 @@
 		}
 
 		Class OrderProcessor Implements OrderProcessorInterface {
-			// Properties
 			public $btw;
 			public $cart;
 			public $customer;
@@ -43,7 +42,6 @@
 			public $tot;
 			public $validator;
 
-			// Methods
 			public function setTestmode ( $testmode ) {
 				$this -> testmode = $testmode;
 			}
