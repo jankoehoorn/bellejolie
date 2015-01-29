@@ -1,0 +1,72 @@
+<form id="customer-form" method="post" accept-charset="UTF-8">
+
+	<h2>Customer</h2>
+
+	<div id="form-wrapper" class="clearfix">
+		<div class="left">
+			<div class="wrapper factuuradres">
+				<label>Voornaam:</label>
+				<input type="text" id="factuurvoornaam" name="factuurvoornaam" value="" />
+
+				<label>Tussenvoegsel:</label>
+				<input type="text" id="factuurtussenvoegsel" name="factuurtussenvoegsel" value="" />
+
+				<label>Achternaam:</label>
+				<input type="text" id="factuurachternaam" name="factuurachternaam" value="" />
+
+				<label>Adres:</label>
+				<input type="text" id="factuuradres" name="factuuradres" value="" />
+
+				<label>Postcode:</label>
+				<input type="text" id="factuurpostcode" name="factuurpostcode" value="" />
+
+				<label>Woonplaats:</label>
+				<input type="text" id="factuurwoonplaats" name="factuurwoonplaats" value="" />
+
+				<label>E-mail:</label>
+				<input type="text" id="factuuremail" name="factuuremail" value="" />
+			</div>
+			<div>
+				<input type="checkbox" id="store_customer" name="store_customer" value="store_customer" />
+				<label class="inline" for="store_customer">Onthou mijn gegevens voor de volgende keer</label>
+			</div>
+
+			<div>
+				<input type="checkbox" id="two_addresses" name="two_addresses" value="two_addresses" />
+				<label class="inline" for="two_addresses">Het bezorgadres verschilt van het factuuradres</label>
+			</div>
+		</div>
+
+		<div class="right">
+
+			<div id="wrapper_bezorgadres" class="wrapper bezorgadres">
+				<label>Voornaam:</label>
+				<input type="text" id="bezorgvoornaam" name="bezorgvoornaam" value="" />
+
+				<label>Tussenvoegsel:</label>
+				<input type="text" id="bezorgtussenvoegsel" name="bezorgtussenvoegsel" value="" />
+
+				<label>Achternaam:</label>
+				<input type="text" id="bezorgachternaam" name="bezorgachternaam" value="" />
+
+				<label>Adres:</label>
+				<input type="text" id="bezorgadres" name="bezorgadres" value="" />
+
+				<label>Postcode:</label>
+				<input type="text" id="bezorgpostcode" name="bezorgpostcode" value="" />
+
+				<label>Woonplaats:</label>
+				<input type="text" id="bezorgwoonplaats" name="bezorgwoonplaats" value="" />
+
+				<div>
+					<input type="checkbox" id="cadeauservice" name="cadeauservice" value="1" />
+					<label class="inline">Cadeauservice</label>
+				</div>
+
+				<label>Tekst op cadeaukaart:</label>
+				<textarea id="tekst_cadeaukaart" name="tekst_cadeaukaart"></textarea>
+			</div>
+		</div>
+	</div>
+	<input type="submit" value="verzenden" />
+</form>

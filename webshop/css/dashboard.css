@@ -1,0 +1,115 @@
+	div.container {
+		width: 1200px !important;
+	}
+	
+	div#categories, div#details {
+		position: relative;
+	}
+	
+	div#msg {
+		color: orange;
+		font-size: 18px;
+		position: absolute;
+		top: -25px;
+		left: 300px;
+	}
+	
+	table {
+	
+	}
+	
+	table tr {
+	
+	}
+	
+	table.sortable tbody tr {
+		cursor: move;
+	}
+	
+	table tr th, table tr td {
+		text-align: left;
+		vertical-align: top !important;
+		padding: 5px 10px !important;
+	}
+	
+	table tr th {
+	
+	}
+	
+	table tr td {
+	
+	}
+	
+	table tr td.strong {
+		font-weight: bold;
+	}
+	
+	table tr.hidden td {
+		color: #A4A4A4;
+	}
+	
+	table tr.offer td {
+		color: #A40000;
+		font-weight: bold;
+	}
+	
+	table tr.hidden.offer td {
+		color: #A400A4;
+	}
+	
+	#tablenames_multi {
+		width: 500px;
+		height: 375px;
+	}
+	
+	/* SECTION: FORM ELEMENTS */
+	div.row em {
+		color: #A4A4A4;
+	}
+	
+	label.inline {
+		display: inline;
+		padding-left: 10px;
+	}
+	
+	textarea.small {
+		width: 100px;
+	}
+	
+	textarea.medium {
+		width: 200px;
+	}
+	
+	textarea.large {
+		width: 400px;
+	}
+	
+	/* SECTION: DATATABLES */
+	div.dataTables_length {
+	}
+	
+	div.dataTables_wrapper input, div.dataTables_wrapper select {
+		display: inline !important;
+	}
+	
+	table.dataTable tbody tr.odd {
+		background: #eec;
+	}
+	
+	table.dataTable tbody tr.even {
+	}
+	
+	table.dataTable thead th.sorting_asc {
+		background: url('/themes/bellejolie/images/alphabetical-sorting-asc.png') right 5px no-repeat;
+	}
+	
+	table.dataTable thead th.sorting_desc {
+		background: url('/themes/bellejolie/images/alphabetical-sorting-desc.png') right 5px no-repeat;
+	}
+	
+	div#generate {
+		margin: 40px 0px 10px;
+		padding: 20px;
+		border: 1px solid #A4A4A4;
+		border-radius: 4px;
+	}

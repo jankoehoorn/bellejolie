@@ -1,0 +1,267 @@
+
+ #response pre {
+ font: 12px Consolas;
+ color: tomato;
+ }
+
+div.category {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	cursor: pointer;
+	float: left;
+	width: 190px;
+	height: 175px;
+	overflow: auto;
+	padding: 10px 20px 5px 20px;
+	margin: 0px 10px 10px 0px;
+}
+
+div.intro {
+	margin: 20px 0px;
+}
+
+div.intro p {
+	font-style: italic;
+	font-size: 14px;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.category h3 {
+	font-size: 14px;
+}
+
+div.category p {
+	font-size: 12px;
+}
+
+div.detail {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	cursor: move;
+	float: left;
+	width: 200px;
+	height: 175px;
+	overflow: auto;
+	padding: 10px 10px 5px;
+	margin: 0px 10px 10px 0px;
+}
+
+div.detail h3 {
+	font-size: 14px;
+}
+
+div.detail div.thumbnail {
+	cursor: hand;
+}
+
+div.detail p {
+	font: 11px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #999;
+}
+
+div.detail p.detail_id, div.cart-item p.detail_id {
+	color: orange;
+	display: none;
+}
+
+div.detail p.article-number {
+	text-align: right;
+	color: #666;
+}
+
+div.detail p.price {
+	color: turquoise;
+	font-weight: bold;
+	float: right;
+	margin-left: 20px;
+}
+
+div.detail div.thumbnail {
+	float: right;
+	clear: right;
+}
+
+div.clearer {
+	height: 0px;
+	line-height: 0px;
+	font-size: 0px;
+	clear: both;
+}
+
+div#sidebar {
+	position: relative;
+}
+
+div#cart-container {
+	background: turquoise;
+	border-radius: 4px;
+	padding: 10px;
+	margin-top: 146px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 200px;
+	min-height: 300px;
+}
+
+div#cart-container h3 {
+	color: #fff;
+}
+
+div#cart {
+	background: #fff;
+	border-radius: 4px;
+	margin-top: 20px;
+	min-height: 300px;
+	max-height: 600px;
+	padding: 5px;
+}
+
+div#cart.ui-state-default {
+	background: #ccc;
+}
+
+div#cart.ui-state-hover {
+	background: #fff;
+}
+
+div#cart div.cart-item {
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+div#cart div.cart-item.last {
+
+}
+
+div#cart div.cart-item h3 {
+	font: 10px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #32639A;
+}
+
+div#cart div.cart-item img {
+	border-radius: 4px;
+	opacity: 0.5;
+}
+
+div#cart div.cart-item span.qty {
+	font: 18px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: turquoise;
+}
+
+table.cart {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 1px;
+	border: 1px solid #eee;
+}
+
+table.cart th, table.cart td {
+	text-align: left;
+	vertical-align: top;
+	padding: 5px 12px;
+	border-bottom: 1px dotted #eee;
+}
+
+table.cart .qty, table.cart .price {
+	text-align: right;
+}
+
+table.overview {
+	border: 1px solid #eee;
+	border-radius: 4px;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+table.overview tbody tr.odd {
+	background: #f9f9f9;
+}
+
+table.overview th, table.overview td {
+	padding: 5px 10px;
+	text-align: left;
+	vertical-align: top;
+}
+
+table.overview th, table.overview td, table.overview tbody td a, table.overview td p {
+	margin: 0px;
+	font: 11px/1.2 Verdana, Arial, Helvetica, sans-serif;
+}
+
+table.overview td, table.overview tbody td a, table.overview td.omschrijving p {
+	color: #999;
+}
+
+table.overview td img {
+	background: #fff;
+	border: 1px solid #99f;
+	border-radius: 4px;
+	padding: 4px;
+}
+
+#content table.overview a {
+	color: #32639A;
+	text-decoration: none;
+}
+
+div.dataTables_wrapper {
+	width: 100%;
+	overflow: hidden;
+}
+
+div.dataTables_length {
+	float: left;
+	padding: 10px 0px;
+}
+
+div.dataTables_filter {
+	float: right;
+	padding: 10px 0px;
+}
+
+table.dataTable {
+	clear: both;
+	margin-top: 10px;
+}
+
+div.dataTables_info {
+	padding: 10px 0px;
+}
+
+div.dataTables_paginate {
+	padding: 10px 0px;
+	margin: 5px 0px 0px 0px;
+}
+
+a.paginate_active, a.paginate_button, a.paginate_active:hover, a.paginate_button:hover {
+	border: 1px solid #eee;
+	border-radius: 4px;
+	padding: 5px 10px;
+	text-decoration: none;
+	margin-right: 5px;
+}
+
+a.paginate_active {
+	border: 1px solid #ccc;
+	font-weight: bold;
+}
+
+a.paginate_active:hover, a.paginate_button:hover {
+	border: 1px solid #009FDA;
+	background: #009FDA;
+	color: #fff !important;
+	text-decoration: none !important;
+	cursor: pointer;
+}
+
+a.paginate_button_disabled {
+	color: #ccc !important;
+}
+
+div.ccm-pane-body {
+	display: none;
+}
