@@ -6,9 +6,9 @@
 	Use \Utilities\Request;
 	Use \Utilities\Session;
 
-	Loader :: model ( 'webshop', 'webshop' );
 	Loader :: model ( 'mail', 'webshop' );
 	Loader :: model ( 'utilities', 'utilities' );
+	Loader :: model ( 'webshop', 'webshop' );
 	Debug :: loadKint ( );
 
 	if ( Request :: isPost ( ) ) {
@@ -23,6 +23,8 @@
 			if ( Webshop :: canCheckDiscountCode ( ) ) {
 				$DiscountCode = Webshop :: checkDiscountCode ( Request :: post ( 'discount_code' ) );
 				if ( $DiscountCode -> status == 'distributed' ) {
+					// todo: add a check here to see if the total amount, including everything
+					// is a bigger number dan the discount
 					$DiscountCode -> cash ( );
 					WebshopCart :: setDiscount ( $DiscountCode -> korting );
 					WebshopCart :: setDiscountCode ( $DiscountCode -> code );
