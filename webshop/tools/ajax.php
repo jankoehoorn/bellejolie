@@ -23,8 +23,8 @@
 			if ( Webshop :: canCheckDiscountCode ( ) ) {
 				$DiscountCode = Webshop :: checkDiscountCode ( Request :: post ( 'discount_code' ) );
 				if ( $DiscountCode -> status == 'distributed' ) {
-					// todo: add a check here to see if the total amount, including everything
-					// is a bigger number dan the discount
+					$CartInspector = unserialize ( Session :: get ( 'cart_inspector' ) );
+					
 					$DiscountCode -> cash ( );
 					WebshopCart :: setDiscount ( $DiscountCode -> korting );
 					WebshopCart :: setDiscountCode ( $DiscountCode -> code );

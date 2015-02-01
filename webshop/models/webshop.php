@@ -1,13 +1,14 @@
 <?php
-	Use Utilities\Registry;
-	Use Webshop\IoC;
-	Use Webshop\Preferences;
-	Use Webshop\DiscountCode;
-
 	defined ( 'C5_EXECUTE' ) or die ( 'Access Denied' );
 
-	Loader :: model ( 'utilities', 'utilities' );
+	Use Utilities\Registry;
+	Use Webshop\DiscountCode;
+	Use Webshop\IoC;
+	Use Webshop\Preferences;
+
+	Loader :: model ( 'cart_inspector', 'webshop' );
 	Loader :: model ( 'customer', 'customer' );
+	Loader :: model ( 'discount_code', 'webshop' );
 	Loader :: model ( 'factory', 'webshop' );
 	Loader :: model ( 'form', 'form' );
 	Loader :: model ( 'inventory_manager', 'webshop' );
@@ -19,13 +20,17 @@
 	Loader :: model ( 'preferences', 'webshop' );
 	Loader :: model ( 'printer', 'form' );
 	Loader :: model ( 'printer', 'webshop' );
-	Loader :: model ( 'discount_code', 'webshop' );
+	Loader :: model ( 'utilities', 'utilities' );
 
 	Interface WebshopCartPrinter {
 		public static function printItems ( );
 	}
 
 	Class Webshop {
+		public static function discountIsDeductible ( DiscountCode $DiscountCode ) {
+
+		}
+
 		public static function canCheckDiscountCode ( ) {
 			$sql = "
 				SELECT COUNT(history_id) AS num_attempts
@@ -367,6 +372,8 @@
 
 		public function emptyCart ( ) {
 			unset ( $_SESSION[ 'cart' ] );
+			unset ( $_SESSION[ 'discount' ] );
+			unset ( $_SESSION[ 'discount_code' ] );
 		}
 
 		public function addItem ( $detail_id ) {
