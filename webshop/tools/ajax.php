@@ -18,17 +18,24 @@
 		$action = Request :: get ( 'action', 'default' );
 	}
 
+	$WebshopPrinter = unserialize ( Session :: get ( 'webshop_printer' ) );
+
 	switch ( $action ) {
 		case 'check-discount-code':
 			if ( Webshop :: canCheckDiscountCode ( ) ) {
 				$DiscountCode = Webshop :: checkDiscountCode ( Request :: post ( 'discount_code' ) );
 				if ( $DiscountCode -> status == 'distributed' ) {
 					$CartInspector = unserialize ( Session :: get ( 'cart_inspector' ) );
-					
-					$DiscountCode -> cash ( );
-					WebshopCart :: setDiscount ( $DiscountCode -> korting );
-					WebshopCart :: setDiscountCode ( $DiscountCode -> code );
-					echo 'redraw-cart';
+
+					if ( $CartInspector -> getTotal ( $WebshopPrinter -> registry ) >= $DiscountCode -> korting ) {
+						$DiscountCode -> cash ( );
+						WebshopCart :: setDiscount ( $DiscountCode -> korting );
+						WebshopCart :: setDiscountCode ( $DiscountCode -> code );
+						echo 'redraw-cart';
+					}
+					else {
+						echo 'Uw kortingscode is geldig, maar het totaalbedrag in uw winkelwagentje moet groter zijn dan het bedrag van uw cadeaubon.';
+					}
 				}
 				else {
 					$sql = "
@@ -81,18 +88,15 @@
 
 		case 'decrease-qty':
 			WebshopCart :: decreaseQty ( Request :: post ( 'detail_id' ) );
-			$WebshopPrinter = unserialize ( Session :: get ( 'webshop_printer' ) );
 			$WebshopPrinter -> printCartCompleteOrder ( );
 			break;
 
 		case 'increase-qty':
 			WebshopCart :: increaseQty ( Request :: post ( 'detail_id' ) );
-			$WebshopPrinter = unserialize ( Session :: get ( 'webshop_printer' ) );
 			$WebshopPrinter -> printCartCompleteOrder ( );
 			break;
 
 		case 'redraw-cart':
-			$WebshopPrinter = unserialize ( Session :: get ( 'webshop_printer' ) );
 			$WebshopPrinter -> printCartCompleteOrder ( );
 			break;
 

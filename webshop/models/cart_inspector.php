@@ -5,6 +5,7 @@
 
 		Use Loader;
 		Use Utilities\Date;
+		Use Webshop;
 		Use Webshop\IoC;
 
 		Interface CartInspectorInterface {
@@ -41,8 +42,29 @@
 				}
 			}
 
-			public function getTotalSubTot ( ) {
+			public function getTotal ( $registry ) {
+				$tot = 0;
+				$btw = 0;
+				$result = 0;
 
+				foreach ( $_SESSION['cart'] as $detail_id => $properties ) {
+					$detail = Webshop :: getDetail ( $detail_id );
+					$category = Webshop :: getCategory ( $detail -> category_id );
+					$properties = (object)$properties;
+					$num_artikelen += $properties -> qty;
+					$subtot = $detail -> prijs * $properties -> qty;
+					$subbtw = round ( $subtot * $detail -> btw, 2 );
+					$tot += $subtot;
+					$btw += $subbtw;
+				}
+
+				$result = $tot + $btw;
+
+				if ( $result < 50 ) {
+					$result += $registry -> preferences -> verzendkosten;
+				}
+
+				return $result;
 			}
 
 			public function getTotalBtw ( ) {
